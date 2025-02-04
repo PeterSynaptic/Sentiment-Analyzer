@@ -122,6 +122,4 @@ if st.button("Analyze Sentiment", type="primary", use_container_width=True):
     else:
         st.warning("Please enter some text to analyze")
 
-# Footer
-st.markdown("---")
-st.markdown("Built with ♥ using [Gemini](https://ai.google.dev/) and [Streamlit](https://streamlit.io/)")
+
