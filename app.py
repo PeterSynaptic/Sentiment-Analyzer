@@ -76,8 +76,8 @@ with st.container():
 # Analysis Section
 if st.button("Analyze Sentiment", type="primary", use_container_width=True, **{'secondary': True}):
         if user_input:
-        with st.spinner("🔍 Analyzing sentiment..."):
-            result = analyze_sentiment(user_input)
+            with st.spinner("🔍 Analyzing sentiment..."):
+                result = analyze_sentiment(user_input)
             
         if result:
             # Check for list response format
