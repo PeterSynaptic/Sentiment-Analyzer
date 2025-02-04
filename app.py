@@ -15,9 +15,8 @@ def analyze_sentiment(text):
             st.warning("Please enter your API key to proceed.")
             st.stop()
 
-        genai.configure(api_key=api_key) 
+        genai.configure(api_key=api_key) # Configure API here
 
-        
         # Model configuration
         generation_config = {
             "temperature": 1,
@@ -75,9 +74,9 @@ with st.container():
 
 # Analysis Section
 if st.button("Analyze Sentiment", type="primary", use_container_width=True, **{'secondary': True}):
-        if user_input:
-            with st.spinner("🔍 Analyzing sentiment..."):
-                result = analyze_sentiment(user_input)
+    if user_input:
+        with st.spinner("🔍 Analyzing sentiment..."):
+            result = analyze_sentiment(user_input)
             
         if result:
             # Check for list response format
@@ -120,5 +119,3 @@ if st.button("Analyze Sentiment", type="primary", use_container_width=True, **{'
                 """, unsafe_allow_html=True)
     else:
         st.warning("Please enter some text to analyze")
-
-
