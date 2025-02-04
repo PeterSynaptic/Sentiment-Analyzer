@@ -10,13 +10,12 @@ def analyze_sentiment(text):
     """Analyzes text sentiment using Gemini API with enhanced error handling."""
     try:
         # Configure API (use secrets management for production)
-        # Check for API key
-        api_key = st.secrets["API_KEY"]
-    if not api_key:
-        api_key = st.text_input("Enter your Gemini API Key:", type="password")
-    if not api_key:
-        st.warning("Please enter your API key to proceed.")
-        st.stop()
+        api_key = st.secrets.get("API_KEY") or st.text_input("Enter your Gemini API Key:", type="password")
+        if not api_key:
+            st.warning("Please enter your API key to proceed.")
+            st.stop()
+
+        genai.configure(api_key=api_key) 
 
         
         # Model configuration
