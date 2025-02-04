@@ -11,7 +11,7 @@ def analyze_sentiment(text):
     try:
         # Configure API (use secrets management for production)
         #genai.configure(api_key=st.secrets["API_KEY"])  # Recommended: Use st.secrets
-        genai.configure(api_key="AIzaSyBNFhXPD8-QeEpCkHte8Weo-9XImRwWXkU")
+        genai.configure(api_key="")
         
         # Model configuration
         generation_config = {
